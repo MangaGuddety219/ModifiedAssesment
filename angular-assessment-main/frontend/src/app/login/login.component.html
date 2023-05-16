@@ -1,0 +1,27 @@
+<div class="login-bg">
+  <div class="shadow-lg p-3 mb-5 login-card">
+    <h1>Login Form</h1>
+    <form class="login-form" [formGroup]="LoginForm" (ngSubmit)="login()">
+      <label class="login-label">Username</label>
+      <input type="text" class="form-control login-input" formControlName="Username" />
+      <p *ngIf="submitted && LoginForm.get('Username')?.errors" class="text-danger">
+          Please enter your username
+      </p>
+
+      <label class="login-label">Password</label>
+      <input type="password" class="form-control login-input" formControlName="password" />
+      <p *ngIf="submitted && LoginForm.get('password')?.errors" class="text-danger">
+          Check Your Password
+      </p>
+      <button type="submit" class="btn" (click)="login()">
+        Login
+      </button>
+      <div class="row">
+          <div class="col-md-7 mt-3">
+              <a class="anchor" href="../signup" style="text-decoration:none"> <span>Signup</span></a>
+          </div>
+
+      </div>
+    </form>
+  </div>
+</div>

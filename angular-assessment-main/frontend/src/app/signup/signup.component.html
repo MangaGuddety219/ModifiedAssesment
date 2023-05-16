@@ -1,0 +1,32 @@
+<div class="login-bg">
+  <div class="shadow-lg p-3 mb-5 login-card">
+    <h3 class="title">SignUp</h3>
+    <form class="login-form" [formGroup]="RegisterForm" (ngSubmit)="register()">
+      <label class="login-label">Username</label>
+      <input type="text" class="form-control login-input" formControlName="Username" />
+      <p *ngIf="submitted && RegisterForm.get('Username')?.errors" class="text-danger">
+          Please enter your username
+      </p>
+      <label class="login-label">Name</label>
+      <input type="text" class="form-control login-input" formControlName="Name" />
+      <p *ngIf="submitted && RegisterForm.get('Name')?.errors" class="text-danger">
+          Please enter your name
+      </p>
+
+      <label class="login-label">Password</label>
+      <input type="password" class="form-control login-input" formControlName="password" />
+      <p *ngIf="submitted && RegisterForm.get('password')?.errors" class="text-danger">
+          Check Your Password
+      </p>
+      <button type="submit" class="btn">
+        Register
+      </button>
+      <div class="row">
+          <div class="col-md-7 mt-3">
+              <a class="anchor" href="../login"> <span>already registered?</span></a>
+          </div>
+
+      </div>
+    </form>
+  </div>
+</div>
