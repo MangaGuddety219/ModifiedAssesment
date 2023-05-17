@@ -20,6 +20,7 @@
       <div class="first">
         <h2>Bookmarks</h2>
         <button class="btn btn-primary bookmark" (click)="savebookmarks(i.id)">+BookMarks</button>
+        <button class="btn btn-primary bookmark" (click)="bookmark(i.id)">AddBookMarks</button>
       </div>
       <div>
         <div *ngFor="let bookmark of bookmarks">
